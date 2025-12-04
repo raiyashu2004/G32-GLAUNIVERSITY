@@ -27,13 +27,14 @@ const purchaseSchema = new mongoose.Schema(
     purchaseDate: { type: Date, required: true },
     quantity: { type: Number, required: true },
     purchasePrice: { type: Number, required: true },
-    discount: { type: Number, default: 0 }, //in percent
+    discount: { type: Number, default: 0 }, 
     mrp: { type: Number, required: true },
     expiryDate: { type: Date },
     remainingQty: { type: Number, required: true },
   },
   { timestamps: true }
 );
+
 const returnSchema = new mongoose.Schema(
   {
     purchaseId: {
@@ -45,6 +46,31 @@ const returnSchema = new mongoose.Schema(
     expectedRefund: { type: Number, required: true },
     actualRefund: { type: Number, required: true },
     returnDate: { type: Date, default: Date.now },
+  },
+  { timestamps: true }
+);
+
+const billSchema = new mongoose.Schema(
+  {
+    billNo: { type: String, required: true, unique: true },
+    customerName: { type: String },
+    totalAmount: { type: Number, required: true },
+    paidAmount: { type: Number, required: true },
+    paymentMethod: {
+      type: String,
+      enum: ["Cash", "UPI", "Card", "Other"],
+      default: "Cash",
+    },
+    items: [
+      {
+        productName: { type: String },
+        quantity: { type: Number },
+        pricePerUnit: { type: Number },
+        discount: { type: Number, default: 0 }, 
+        discountedPrice: { type: Number }, 
+        total: { type: Number },
+      },
+    ],
   },
   { timestamps: true }
 );
