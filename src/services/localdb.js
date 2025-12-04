@@ -15,17 +15,14 @@ export async function getDB() {
     },
   });
 }
-
 export async function getAll(store) {
   const db = await getDB();
   return db.getAll(store);
 }
-
 export async function put(store, value) {
   const db = await getDB();
   return db.put(store, value);
 }
-
 export async function putBulk(store, values) {
   const db = await getDB();
   const tx = db.transaction(store, "readwrite");
@@ -44,11 +41,9 @@ export async function deleteDB() {
 export async function clearAllData() {
   const db = await getDB();
   const tx = db.transaction(STORE_NAMES, "readwrite");
-
   for (const storeName of STORE_NAMES) {
     await tx.objectStore(storeName).clear();
   }
-
   await tx.done;
   console.log("All local data cleared successfully");
 }
@@ -57,13 +52,10 @@ export async function clearSpecificStore(storeName) {
   if (!STORE_NAMES.includes(storeName)) {
     throw new Error(`Invalid store name: ${storeName}`);
   }
-
   const db = await getDB();
   await db.clear(storeName);
   console.log(`${storeName} store cleared successfully`);
 }
-
-// Helper function to get all data for debugging
 export async function getAllDataFromAllStores() {
   const db = await getDB();
   const allData = {};
@@ -71,6 +63,5 @@ export async function getAllDataFromAllStores() {
   for (const storeName of STORE_NAMES) {
     allData[storeName] = await db.getAll(storeName);
   }
-
   return allData;
 }
