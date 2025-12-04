@@ -139,7 +139,6 @@ const ExpiryNotification = ({ onExpiringCountChange, onNotification }) => {
           })}
         </List>
       </DialogContent>
-
       <DialogActions>
         <Button onClick={handleClose} variant="contained">
           Acknowledge
