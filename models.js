@@ -74,3 +74,21 @@ const billSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+const syncLogSchema = new Schema(
+  {
+    syncType: { type: String, enum: ["auto", "manual"], default: "auto" },
+    syncedAt: { type: Date, default: Date.now },
+    success: { type: Boolean, default: true },
+    errorMsg: { type: String },
+  },
+  { timestamps: true }
+);
+
+const Product = new mongoose.model("Products", productSchema);
+const Purchase = new mongoose.model("Purchase", purchaseSchema);
+const Return = new mongoose.model("Return", returnSchema);
+const Bill = new mongoose.model("Bill", billSchema);
+const SyncLog = new mongoose.model("SyncLog", syncLogSchema);
+
+module.exports = { Product, Purchase, Return, Bill, SyncLog };
