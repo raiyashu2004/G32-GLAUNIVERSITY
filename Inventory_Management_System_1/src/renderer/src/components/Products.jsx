@@ -156,6 +156,37 @@ const Products = ({ onNotification }) => {
 
   return (
     <Box>
+      {/* Modern Header Section */}
+      <Box sx={{
+        mb: 4,
+        p: 3,
+        background: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',
+        borderRadius: 3,
+        color: 'white',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <Box sx={{
+          position: 'absolute',
+          top: -50,
+          right: -50,
+          width: 200,
+          height: 200,
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.1)',
+        }} />
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <Box>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+              Product Management
+            </Typography>
+            <Typography variant="body1" sx={{ opacity: 0.9 }}>
+              Manage your inventory products and categories
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
       <Card sx={{ mb: 4, boxShadow: 'none', border: '1px solid #e0e0e0' }}>
         <CardContent sx={{
           display: 'flex',
