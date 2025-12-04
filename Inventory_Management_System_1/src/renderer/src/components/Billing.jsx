@@ -311,25 +311,57 @@ const Billing = ({ onNotification }) => {
   };
 
   return (
-    <Box sx={{
-      display: 'flex',
-      gap: 3,
-      height: '100vh',
-      overflow: 'hidden',
-      position: 'relative'
-    }}>
-      {/* Bill Details - Scrollable */}
+    <Box>
+      {/* Modern Header Section */}
       <Box sx={{
-        flex: 1,
-        overflow: 'auto',
-        pr: 1,
-        marginRight: '370px' // Reserve space for the fixed summary
+        mb: 4,
+        p: 3,
+        background: 'linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%)',
+        borderRadius: 3,
+        color: 'white',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <Paper sx={{
-          p: 3,
-          boxShadow: 'none',
-          border: '1px solid #e0e0e0'
+        <Box sx={{
+          position: 'absolute',
+          top: -50,
+          right: -50,
+          width: 200,
+          height: 200,
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.1)',
+        }} />
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+          <Box>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 1 }}>
+              Billing System
+            </Typography>
+            <Typography variant="body1" sx={{ opacity: 0.9 }}>
+              Create professional invoices and manage customer billing
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box sx={{
+        display: 'flex',
+        gap: 3,
+        height: '100vh',
+        overflow: 'hidden',
+        position: 'relative'
+      }}>
+        {/* Bill Details - Scrollable */}
+        <Box sx={{
+          flex: 1,
+          overflow: 'auto',
+          pr: 1,
+          marginRight: '370px' // Reserve space for the fixed summary
         }}>
+          <Paper sx={{
+            p: 3,
+            boxShadow: 'none',
+            border: '1px solid #e0e0e0'
+          }}>
           <Typography variant="h6" gutterBottom>
             Bill Details
           </Typography>
@@ -673,6 +705,7 @@ const Billing = ({ onNotification }) => {
           </Box>
         </Card>
       </Box>
+    </Box>
     </Box>
   );
 };
