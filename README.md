@@ -19,7 +19,8 @@ IMS provides a reliable digital ledger for accurate visibility and faster operat
 ## Screenshots
 
 ### 1. Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](![WhatsApp Image 2025-12-04 at 13 22 04_f4079bbb](https://github.com/user-attachments/assets/0fce0b24-6700-4f8c-adbc-f2371ccfabc1)
+)
 
 ### 2. Product Management
 ![Products Page](screenshots/products.png)
