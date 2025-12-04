@@ -34,3 +34,17 @@ const purchaseSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+const returnSchema = new mongoose.Schema(
+  {
+    purchaseId: {
+      type: Schema.Types.ObjectId,
+      ref: "Purchase",
+      required: true,
+    },
+    returnedQty: { type: Number, required: true },
+    expectedRefund: { type: Number, required: true },
+    actualRefund: { type: Number, required: true },
+    returnDate: { type: Date, default: Date.now },
+  },
+  { timestamps: true }
+);
