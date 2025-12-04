@@ -34,16 +34,13 @@ export async function putBulk(store, values) {
   }
   await tx.done;
 }
-
 export async function clear(store) {
   const db = await getDB();
   return db.clear(store);
 }
-
 export async function deleteDB() {
   return (await getDB()).close();
 }
-
 export async function clearAllData() {
   const db = await getDB();
   const tx = db.transaction(STORE_NAMES, "readwrite");
