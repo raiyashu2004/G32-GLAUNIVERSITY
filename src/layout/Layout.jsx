@@ -6,7 +6,11 @@ import { useCustomTheme } from '../theme/CustomTheme';
 const navItems = [
   { label: 'Dashboard', path: '/dashboard' },
   { label: 'Products',  path: '/products' },
-  // add more nav items
+  { label: 'Billing', path: '/billing' },
+  { label: 'Bills', path: '/bills' },
+  { label: 'Purchases', path: '/purchases' },
+  { label: 'Returns', path: '/returns' },
+  { label: 'Expiry Notification', path: '/expiry-notification' },
 ];
 
 const Layout = ({ children }) => {
@@ -31,14 +35,31 @@ const Layout = ({ children }) => {
         </Toolbar>
       </AppBar>
 
-      <Drawer open={drawerOpen} onClose={toggleDrawer}>
-        <List>
-          {navItems.map(item => (
-            <ListItem button key={item.path} component={Link} to={item.path} onClick={toggleDrawer}>
-              <ListItemText primary={item.label} />
-            </ListItem>
-          ))}
-        </List>
+      <Drawer 
+        open={drawerOpen} 
+        onClose={toggleDrawer}
+        PaperProps={{
+          sx: { width: 250 }
+        }}
+      >
+        <Box sx={{ width: 250, pt: 8, height: '100%', overflow: 'auto' }}>
+          <List>
+            {navItems.map(item => (
+              <ListItem 
+                key={item.path} 
+                component={Link} 
+                to={item.path} 
+                onClick={toggleDrawer}
+                sx={{ 
+                  cursor: 'pointer',
+                  '&:hover': { backgroundColor: 'action.hover' }
+                }}
+              >
+                <ListItemText primary={item.label} />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
       </Drawer>
 
       <Box component="main" sx={{ flexGrow:1, p:3, mt:8 }}>
