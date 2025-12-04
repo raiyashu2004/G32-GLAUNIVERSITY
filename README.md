@@ -244,6 +244,6 @@ npm run dev```
 |-------|------|------------------|
 | Divyansh Patel | Backend Developer (Core APIs) | Express setup, Auth/RBAC, Products CRUD, integration |
 | Vibhu Yadav | Backend Developer (Stock & Alerts) | Stock in/out/adjust engine, transaction logs, low-stock alerts |
-| Achintya | Frontend Developer (Dashboard & Shell) | App routing, auth guards, dashboard KPIs + charts |
+| Achintya | Database aand Backend (Mongo and Mongoose) | App routing, auth guards, dashboard KPIs + charts |
 | Meenakshi | Frontend Developer (Products/Suppliers UI) | Product & supplier pages, search/filters, forms |
 | Rakshit | Reports + QA + Integration | Reporting module, export, testing flows, demo preparation |
