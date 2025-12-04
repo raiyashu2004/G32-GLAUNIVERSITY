@@ -18,16 +18,15 @@ IMS provides a reliable digital ledger for accurate visibility and faster operat
 
 ## Screenshots
 
-> Add your screenshots inside a folder like: `screenshots/`
-
 ### 1. Dashboard
-![Dashboard](Screenshot 2025-12-04 130158.png)
+![Dashboard](screenshots/dashboard.png)
 
 ### 2. Product Management
-![Products Page](Screenshot 2025-12-04 130341.png)
+![Products Page](screenshots/products.png)
 
 ### 3. Stock In / Stock Out Flow
-![Stock In](Screenshot 2025-12-04 130327.png)
+![Stock In](screenshots/stock-in.png)
+
 
 ## Features
 
